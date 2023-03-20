@@ -1,7 +1,9 @@
 spring:
   application:
     name: api-gateway
-
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
   cloud:
     gateway:
       routes[0]:
