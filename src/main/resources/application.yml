@@ -8,30 +8,30 @@ spring:
     gateway:
       routes:
         - id: auth-service
-          uri: lb://auth-service
-          predicates: Path=/api/v1/auth/**
+ur          uri: http://54.163.60.146:8088/
+          predicates: Path=/auth-service/**
 
         - id: hotel-service
-          uri: lb://hotel-service
-          predicates: Path=/api/v1/hotel/**
+          uri: http://100.25.163.143:8083/
+          predicates: Path=/hotel-service/**
           filters:
             - AuthenticationFilter
 
-        - id: room-service
-          uri: lb://room-service
-          predicates: Path=/api/v1/room/**
-          filters:
-            - AuthenticationFilter
+#        - id: room-service
+#          uri: lb://room-service
+#          predicates: Path=/api/v1/room/**
+#          filters:
+#            - AuthenticationFilter
 
         - id: room-service
-          uri: lb://room-service
-          predicates: Path=/api/v1/room-type/**
+          uri: http://35.153.79.104:8084/
+          predicates: Path=/room-service/**
           filters:
             - AuthenticationFilter
 
         - id: booking-service
-          uri: lb://booking-service
-          predicates: Path=/api/v1/booking/**
+          uri: http://54.160.111.224:8086/
+          predicates: Path=/booking-service/**
           filters:
             - AuthenticationFilter
 
@@ -41,7 +41,7 @@ eureka:
       defaultZone: http://100.26.231.196:8761/eureka
 
 server:
-  port: 8079
+  port: 8080
 
 logging:
   level:
