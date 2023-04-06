@@ -50,4 +50,4 @@ logging:
     org.springframework.cloud.gateway: TRACE
     com.hilltop: ${LOG_LEVEL:DEBUG}
   file:
-      path: ${LOGPATH:/home/ubuntu/logs}
+      path: ${LOGPATH:/home/ubuntu/log}
