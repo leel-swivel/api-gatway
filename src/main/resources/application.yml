@@ -8,7 +8,7 @@ spring:
     gateway:
       routes:
         - id: auth-service
-ur          uri: http://54.163.60.146:8088/
+          uri: http://54.163.60.146:8088/
           predicates: Path=/auth-service/**
 
         - id: hotel-service
@@ -16,12 +16,6 @@ ur          uri: http://54.163.60.146:8088/
           predicates: Path=/hotel-service/**
           filters:
             - AuthenticationFilter
-
-#        - id: room-service
-#          uri: lb://room-service
-#          predicates: Path=/api/v1/room/**
-#          filters:
-#            - AuthenticationFilter
 
         - id: room-service
           uri: http://35.153.79.104:8084/
